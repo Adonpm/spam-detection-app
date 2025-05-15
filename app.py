@@ -2,6 +2,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import uvicorn
+import os
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -39,4 +40,5 @@ async def predict_api(request: Request, message: str = Form(...)):
 
 # Running the app
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="127.0.0.1", port=port)
