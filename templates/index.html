@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detector</title>
+</head>
+<body>
+    <div>
+        <h1>Spam Detector</h1>
+        <p>
+            This is an application to detect and identify whether the message recieved is spam or not. <br/>
+            Please enter the message in the below box and identify.
+        </p>
+        <form action="/predict" method="post">
+            <input type="text" name=message placeholder="Enter your message" id="messageInput"><br/>
+            <button type="submit" id="submitButton">Submit</button>
+        </form>
+    </div>
+
+    <!-- Display the prediction result if available -->
+    {% if prediction_text %}
+    <div>
+        <h2>Prediction Result</h2>
+        <p>{{ prediction_text }}</p>
+    </div>
+    {% endif %}
+
+</body>
+</html>
