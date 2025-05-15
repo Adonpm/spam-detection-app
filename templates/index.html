@@ -4,27 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spam Detector</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div>
-        <h1>Spam Detector</h1>
-        <p>
-            This is an application to detect and identify whether the message recieved is spam or not. <br/>
-            Please enter the message in the below box and identify.
-        </p>
-        <form action="/predict" method="post">
-            <input type="text" name=message placeholder="Enter your message" id="messageInput"><br/>
-            <button type="submit" id="submitButton">Submit</button>
-        </form>
-    </div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Spam Detector</h1>
+            </div>
+            <p class="tagline">Powered by Natural Language Processing & Machine Learning</p>
+        </header>
 
-    <!-- Display the prediction result if available -->
-    {% if prediction_text %}
-    <div>
-        <h2>Prediction Result</h2>
-        <p>{{ prediction_text }}</p>
-    </div>
-    {% endif %}
+        <main>
+            <section class="info-panel">
+                <h2><i class="fas fa-info-circle"></i> About This Tool</h2>
+                <p>
+                    This application uses Natural Language Processing (NLP) and a Random Forest classifier
+                    to determine whether a message is spam or legitimate with 98% accuracy.
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>High Accuracy (98%)</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Fast Processing</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-cogs"></i>
+                        <span>NLP Enhanced</span>
+                    </div>
+                </div>
+            </section>
 
+            <section class="message-input">
+                <h2><i class="fas fa-comment-alt"></i> Test a Message</h2>
+                <p>
+                    Enter any message below to check if it would be classified as spam or not.
+                </p>
+                <form action="/predict" method="post">
+                    <div class="input-container">
+                        <textarea name="message" id="messageInput" placeholder="Enter your message here..." required></textarea>
+                    </div>
+                    <button type="submit" id="submitButton">
+                        <i class="fas fa-search"></i> Analyze Message
+                    </button>
+                </form>
+            </section>
+
+            {% if prediction_text %}
+            <section class="result {% if prediction_text == 'Spam' %}spam{% else %}not-spam{% endif %}">
+                <h2>
+                    {% if prediction_text == 'Spam' %}
+                    <i class="fas fa-exclamation-triangle"></i> Spam Detected!
+                    {% else %}
+                    <i class="fas fa-check"></i> Not Spam
+                    {% endif %}
+                </h2>
+                <p class="prediction">
+                    This message has been classified as: <strong>{{ prediction_text }}</strong>
+                </p>
+                <div class="details">
+                    {% if prediction_text == 'Spam' %}
+                    <p>This message contains patterns commonly found in spam communications.</p>
+                    {% else %}
+                    <p>This message appears to be legitimate based on our analysis.</p>
+                    {% endif %}
+                </div>
+            </section>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>
+                Spam Detector Application &copy; 2025 | Built with FastAPI, scikit-learn & NLTK
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/Adonpm/spam-detection-app/blob/main/readme.md" title="View Documentation"><i class="fas fa-book"></i></a>
+                <a href="https://github.com/Adonpm/spam-detection-app?tab=readme-ov-file#model-performance" title="View GitHub Repository"><i class="fab fa-github"></i></a>
+                <a href="mailto:contactadonmathew@gmail.com" title="Contact Author"><i class="fas fa-envelope"></i></a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
