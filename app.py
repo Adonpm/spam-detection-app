@@ -3,11 +3,16 @@ import pandas as pd
 import numpy as np
 import uvicorn
 import os
+import nltk
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from sklearn.feature_extraction.text import CountVectorizer
+
+# Download NLTK resources (required for Hugging Face)
+nltk.download('stopwords')
+nltk.download('punkt')
 
 # Setting up FastAPI as backend framework
 app = FastAPI()
