@@ -13,6 +13,8 @@ pinned: false
 
 A Natural Language Processing (NLP) and machine learning web application built with FastAPI that detects whether a message is spam or not with 98% accuracy.
 
+**Live Demo:** Try the app online at [https://huggingface.co/spaces/Adonpm/spam-detector](https://huggingface.co/spaces/Adonpm/spam-detector)
+
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
