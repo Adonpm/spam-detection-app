@@ -11,8 +11,10 @@ from fastapi.staticfiles import StaticFiles
 from sklearn.feature_extraction.text import CountVectorizer
 
 # Download NLTK resources (required for Hugging Face)
-nltk.download('stopwords')
-nltk.download('punkt')
+nltk_data_dir = "./nltk_data"
+nltk.download('stopwords', download_dir=nltk_data_dir)
+nltk.download('punkt', download_dir=nltk_data_dir)
+os.environ['NLTK_DATA'] = nltk_data_dir
 
 # Setting up FastAPI as backend framework
 app = FastAPI()

@@ -3,7 +3,7 @@ title: Spam Detector
 emoji: 🛡️
 colorFrom: blue
 colorTo: green
-sdk: docker
+sdk: dockerpip 
 sdk_version: "0.104.1"
 app_file: app.py
 pinned: false
