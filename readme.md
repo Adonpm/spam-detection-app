@@ -1,3 +1,14 @@
+---
+title: Spam Detector
+emoji: 🛡️
+colorFrom: blue
+colorTo: green
+sdk: fastapi
+sdk_version: 0.104.1
+app_file: app.py
+pinned: false
+---
+
 # Spam Message Detector
 
 A Natural Language Processing (NLP) and machine learning web application built with FastAPI that detects whether a message is spam or not with 98% accuracy.
