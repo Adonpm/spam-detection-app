@@ -3,7 +3,7 @@ title: Spam Detector
 emoji: 🛡️
 colorFrom: blue
 colorTo: green
-sdk: fastapi
+sdk: static
 sdk_version: 0.104.1
 app_file: app.py
 pinned: false
@@ -106,9 +106,9 @@ spam-detector/
 
 ## Usage
 
-1. Start the FastAPI server:
+1. Start the FastAPI server using uvicorn:
    ```
-   python app.py
+   uvicorn app:app --reload --port 8000
    ```
 
 2. Open your browser and navigate to:
