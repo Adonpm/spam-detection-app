@@ -43,7 +43,6 @@ async def predict_api(request: Request, message: str = Form(...)):
     prediction_label="Spam" if prediction[0] else "Not Spam"
     return templates.TemplateResponse("index.html", {"request": request, "prediction_text": prediction_label})
 
-# Running the app
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="127.0.0.1", port=port, reload=True)
+    port = int(os.getenv("PORT", 7860))
+    uvicorn.run(app, host="0.0.0.0", port=port)
