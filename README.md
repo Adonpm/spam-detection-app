@@ -181,6 +181,6 @@ This indicates that:
 ## Deployment
 
 This project is containerized using Docker for easy deployment and scalability.
-- Dockerized App: The application is packaged with a Dockerfile, exposing port 7860 and ready to run in any container environment.
-- CI/CD Pipeline: The GitHub repository is integrated with a CI/CD pipeline that automates testing, building, and deploying the application whenever code is pushed.
-- Hugging Face Spaces: The app is deployed live on Hugging Face Spaces, enabling easy sharing and real-time use of the Spam Detector.
+- **Dockerized App**: The application is packaged with a Dockerfile, exposing port 7860 and ready to run in any container environment.
+- **CI/CD Pipeline**: The GitHub repository is integrated with a CI/CD pipeline that automates testing, building, and deploying the application whenever code is pushed.
+- **Hugging Face Spaces**: The app is deployed live on Hugging Face Spaces, enabling easy sharing and real-time use of the Spam Detector.
