@@ -63,21 +63,42 @@ The spam detection model was built using the following approach:
 ```
 spam-detector/
 │
-├── models/
-│   └── spam_model.pkl           # Trained Random Forest model
+├── .githhub/workflows
+│   └── huggingface-deploy.yml   # CI/CD pipeline for deployment
 │
 ├── cv/
 │   └── count_vectorizer.pkl     # Fitted CountVectorizer for text transformation
 │
-├── templates/
-│   └── index.html               # Frontend HTML template
+├── data/
+│   ├── SMSSpamCollection        # Dataset used for training the model
+│   └── readme.md                # Dataset documentation
+│
+├── models/
+│   └── spam_model.pkl           # Trained Random Forest model
+│
+├── nltk_data/                   
+│   ├── corpora/                 # NLTK corpora datasets (e.g., stopwords, wordnet)
+│   └── tokenizer/               # Tokenizer models and data (e.g., punkt)
+│
+├── notebooks/
+│   └── spam_classifier.ipynb    # Notebook for creating CountVectorizer and ML model
 │
 ├── static/
 │   ├── css/                     # CSS styling files
 │   └── js/                      # JavaScript files (if any)
 │
+├── templates/
+│   └── index.html               # Frontend HTML template
+│
+├── .gitattributes               # Git LFS configuration file
+│
 ├── app.py                       # FastAPI application
-└── README.md                    # This file
+│
+├── Dockerfile                   # Docker containerization file
+│
+├── README.md                    # Project documentation (this file)
+│
+└── requirements.txt             # Python dependencies
 ```
 
 ## Installation
@@ -155,12 +176,11 @@ This indicates that:
 - **Natural Language Processing (NLP)**: Text preprocessing, tokenization, stemming, stopword removal
 - **Data Processing**: Pandas, NumPy
 - **Model Serialization**: Pickle
+- **Containerization**: Docker
 
-## Future Improvements
+## Deployment
 
-- Add more styling to enhance the UI
-- Create a dashboard with visualization of results
-- Add batch processing capabilities
-- Deploy the application to a cloud platform
-- Implement confidence scores for predictions
-- Add model retraining functionality with new data
+This project is containerized using Docker for easy deployment and scalability.
+- Dockerized App: The application is packaged with a Dockerfile, exposing port 7860 and ready to run in any container environment.
+- CI/CD Pipeline: The GitHub repository is integrated with a CI/CD pipeline that automates testing, building, and deploying the application whenever code is pushed.
+- Hugging Face Spaces: The app is deployed live on Hugging Face Spaces, enabling easy sharing and real-time use of the Spam Detector.
