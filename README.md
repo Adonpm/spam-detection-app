@@ -25,7 +25,7 @@ A Natural Language Processing (NLP) and machine learning web application built w
 - [API Endpoints](#api-endpoints)
 - [Model Performance](#model-performance)
 - [Technologies Used](#technologies-used)
-- [Future Improvements](#future-improvements)
+- [Deployment](#deployment)
 
 ## Overview
 
